@@ -36,16 +36,38 @@ export class NavbarComponent implements OnInit {
   getMegaMenuItems(isLogged: boolean): Array<MenuItem> {
     return [
       {
-        label: '', icon: 'pi pi-fw pi-users',
+        label: isLogged ? 'userName' : '', 
+        icon: 'pi pi-fw pi-users',
         items: [
           {
-            label: 'Registrarse'
+            label: 'Registrarse',
+            visible: !isLogged,
+            command: this.register
           },
           {
-            label: 'Iniciar Sesión'
+            label: 'Iniciar Sesión',
+            visible: !isLogged,
+            command: this.login
+          },
+          {
+            label: 'Cerrar Sesión',
+            visible: isLogged,
+            command: this.logOut
           }
         ]
       }
     ]
+  }
+
+  register() {
+    console.log('register');
+  }
+
+  login() {
+    console.log('login');
+  }
+
+  logOut() {
+    console.log('logOut');
   }
 }
