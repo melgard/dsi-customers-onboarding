@@ -11,6 +11,7 @@ import {MenubarModule} from 'primeng/menubar';
 import {GalleriaModule} from 'primeng/galleria';
 import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
+import {MegaMenuModule} from 'primeng/megamenu';
 
 const primengModules = [
   ConfirmDialogModule,
@@ -24,7 +25,9 @@ const primengModules = [
   MenubarModule,
   GalleriaModule,
   AvatarModule,
-  AvatarGroupModule
+  AvatarGroupModule,
+  MegaMenuModule
+
 ];
 
 @NgModule({

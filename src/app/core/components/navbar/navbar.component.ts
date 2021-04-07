@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,7 @@ import { MenuItem } from 'primeng/api';
 export class NavbarComponent implements OnInit {
 
   public items: MenuItem[];
+  public megaMenuItems: MenuItem[];
 
   constructor() {
 
@@ -26,9 +27,25 @@ export class NavbarComponent implements OnInit {
         url: '/home#threeInfo'
       }
   ];
+  this.megaMenuItems = this.getMegaMenuItems(false);
   }
 
   ngOnInit(): void {
   }
 
+  getMegaMenuItems(isLogged: boolean): Array<MenuItem> {
+    return [
+      {
+        label: '', icon: 'pi pi-fw pi-users',
+        items: [
+          {
+            label: 'Registrarse'
+          },
+          {
+            label: 'Iniciar Sesión'
+          }
+        ]
+      }
+    ]
+  }
 }
