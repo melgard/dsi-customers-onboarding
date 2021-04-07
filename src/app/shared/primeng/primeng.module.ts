@@ -9,6 +9,8 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import {MenubarModule} from 'primeng/menubar';
 import {GalleriaModule} from 'primeng/galleria';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
 
 const primengModules = [
   ConfirmDialogModule,
@@ -20,7 +22,9 @@ const primengModules = [
   FileUploadModule,
   ToastModule,
   MenubarModule,
-  GalleriaModule
+  GalleriaModule,
+  AvatarModule,
+  AvatarGroupModule
 ];
 
 @NgModule({

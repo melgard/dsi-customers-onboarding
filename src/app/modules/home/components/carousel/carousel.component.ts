@@ -16,11 +16,11 @@ export class CarouselComponent implements OnInit {
           numVisible: 5
       },
       {
-          breakpoint: '768px',
+          breakpoint: '1024px',
           numVisible: 3
       },
       {
-          breakpoint: '560px',
+          breakpoint: '1024px',
           numVisible: 1
       }
   ];
@@ -28,10 +28,13 @@ export class CarouselComponent implements OnInit {
   constructor(
     private photoService: PhotoService
   ) {
-    this.photoService.getImages().then(images => this.images = images)
   }
-
+  
   ngOnInit(): void {
+    this.photoService.getImages().then(images => {
+      this.images = images;
+      console.log(this.images);
+    });
   }
 
 }
