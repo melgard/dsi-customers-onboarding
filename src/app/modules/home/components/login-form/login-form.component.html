@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+        <span class="input-group-text">Correo</span>
+        <input class="form-control" type="email" pInputText formControlName="email" />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Contraseña</span>
+        <input class="form-control" type="password" formControlName="password" pInputText />
+    </div>
+
+    <button pButton type="submit" [disabled]="!loginForm.valid" label="Iniciar Sesión"></button>
+</form>

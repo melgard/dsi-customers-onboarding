@@ -10,6 +10,10 @@ import { InfoSectionOneComponent } from './components/info-section-one/info-sect
 import { InfoSectionTwoComponent } from './components/info-section-two/info-section-two.component';
 import { InfoSectionThreeComponent } from './components/info-section-three/info-section-three.component';
 import { FooterComponent } from 'src/app/core/components/footer/footer.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -20,12 +24,16 @@ import { FooterComponent } from 'src/app/core/components/footer/footer.component
     InfoSectionOneComponent, 
     InfoSectionTwoComponent, 
     InfoSectionThreeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     CommonModule,
     PrimengModule,
-    HomeRoutingModule
-  ]
+    HomeRoutingModule,
+    ReactiveFormsModule
+  ],
+  providers: [MessageService]
 })
 export class HomeModule { }

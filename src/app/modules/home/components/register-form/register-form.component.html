@@ -1,0 +1,46 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+        <span class="input-group-text">Correo</span>
+        <input class="form-control" type="email" pInputText formControlName="email" />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Nombre Completo</span>
+        <input class="form-control" type="text" formControlName="nombreCompleto" pInputText />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Contraseña</span>
+        <input class="form-control" type="password" formControlName="password" pInputText />
+
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registerForm.get('password')?.errors?.pattern">
+                Contraseña insegura
+            </div>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Subdominio</span>
+        <input class="form-control" type="text" formControlName="identificador" pInputText />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Razón Social</span>
+        <input class="form-control" type="text" formControlName="razonSocial" pInputText />
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Rubro</span>
+        <select formControlName="rubro" class="form-control">
+            <option [value]="heading.id" *ngFor="let heading of headings">{{ heading.valor }}</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">País</span>
+        <select formControlName="pais" class="form-control">
+            <option [value]="country.id" *ngFor="let country of countries">{{ country.valor }}</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <p-checkbox name="groupname" value="yes" formControlName="termsAndConditions" id="terms"></p-checkbox>
+        <label for="terms">&nbsp;Aceptar términos y condiciones</label>
+    </div>
+    <button pButton type="submit" [disabled]="!registerForm.valid" label="registrarse"></button>
+</form>

@@ -12,6 +12,10 @@ import {GalleriaModule} from 'primeng/galleria';
 import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
 import {MegaMenuModule} from 'primeng/megamenu';
+import {DividerModule} from 'primeng/divider';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {CheckboxModule} from 'primeng/checkbox';
+import {DropdownModule} from 'primeng/dropdown';
 
 const primengModules = [
   ConfirmDialogModule,
@@ -26,8 +30,11 @@ const primengModules = [
   GalleriaModule,
   AvatarModule,
   AvatarGroupModule,
-  MegaMenuModule
-
+  MegaMenuModule,
+  DividerModule,
+  InputNumberModule,
+  CheckboxModule,
+  DropdownModule
 ];
 
 @NgModule({

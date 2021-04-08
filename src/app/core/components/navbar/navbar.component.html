@@ -1,7 +1,21 @@
-<div class="p-grid">
+<div class="p-grid">    
     <div class="p-col">
         <p-menubar [model]="items">
             <p-menubar [model]="megaMenuItems"></p-menubar>
         </p-menubar>
     </div>
 </div>
+
+<!-- Start Register Form -->
+<p-dialog position="top" header="Registrarse" [(visible)]="displayRegisterForm"
+[contentStyle]="{'overflow':'visible', 'width': '500px'}">
+    <app-register-form (hasBeenSaved)="hasBeenSaved()"></app-register-form>
+</p-dialog>
+<!-- End Register Form -->
+
+<!-- Start Login Form -->
+<p-dialog position="top" header="Iniciar Sesión" [(visible)]="displayLoginForm"
+[contentStyle]="{'overflow':'visible', 'width': '500px'}">
+    <app-login-form></app-login-form>
+</p-dialog>
+<!-- End Login Form -->
