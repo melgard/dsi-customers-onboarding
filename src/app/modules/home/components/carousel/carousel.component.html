@@ -1,14 +1,23 @@
 <div class="p-grid">
     <div class="p-col">
-        <p-galleria [value]="images" [autoPlay]="true">
-            <ng-template pTemplate="item" let-item>
-                <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+        <p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+            <ng-template pTemplate="header">
             </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-                <div class="p-grid p-nogutter p-justify-center">
-                    <img [src]="item.thumbnailImageSrc" style="display: block;" />
+            <ng-template let-product pTemplate="item">
+                <div class="product-item text-center">
+                    <div class="product-item-content">
+                        <div class="p-mb-3">
+                            <img src="assets/images/galleria/{{product.image}}" [alt]="product.name" class="product-image" />
+                        </div>
+                        <div>
+                            <h4 class="p-mb-1">{{product.name}}</h4>
+                            <div class="car-buttons p-mt-5" *ngIf="!isAuthenticated">
+                                <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </ng-template>
-        </p-galleria>
+        </p-carousel>
     </div>
 </div>

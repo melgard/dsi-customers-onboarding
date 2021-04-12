@@ -7,15 +7,17 @@ import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
-import {MenubarModule} from 'primeng/menubar';
-import {GalleriaModule} from 'primeng/galleria';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
-import {MegaMenuModule} from 'primeng/megamenu';
-import {DividerModule} from 'primeng/divider';
-import {InputNumberModule} from 'primeng/inputnumber';
-import {CheckboxModule} from 'primeng/checkbox';
-import {DropdownModule} from 'primeng/dropdown';
+import { MenubarModule } from 'primeng/menubar';
+import { GalleriaModule } from 'primeng/galleria';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { DividerModule } from 'primeng/divider';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {CarouselModule} from 'primeng/carousel';
 
 const primengModules = [
   ConfirmDialogModule,
@@ -34,7 +36,9 @@ const primengModules = [
   DividerModule,
   InputNumberModule,
   CheckboxModule,
-  DropdownModule
+  DropdownModule,
+  ProgressSpinnerModule,
+  CarouselModule
 ];
 
 @NgModule({

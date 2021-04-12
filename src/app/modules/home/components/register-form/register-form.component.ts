@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { MessageService } from 'primeng/api';
 import { Heading } from 'src/app/modules/home/interfaces/heading';
 import { Company } from '../../interfaces/company';
@@ -26,7 +27,8 @@ export class RegisterFormComponent implements OnInit {
     private headingsSevice: HeadingService,
     private companyService: CompanyService,
     private countriService: CountryService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private spinnerService: NgxSpinnerService
   ) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -48,8 +50,9 @@ export class RegisterFormComponent implements OnInit {
   onSubmit() {
     if(this.registerForm.invalid) return;
     
-    console.log(this.registerForm.value);
     const { value } = this.registerForm;
+
+    this.spinnerService.show();
 
     const company: Company = {
       email: value.email,
@@ -63,10 +66,12 @@ export class RegisterFormComponent implements OnInit {
 
     this.companyService.register(company).subscribe((resp: any) => {
       console.log(resp);
+      this.spinnerService.hide();
       this.messageService.add({severity:'success', summary:'Service Message', detail:'Compañía registrada correctamente'});
       this.hasBeenSaved.emit(true);
     }, err => {
       console.log(err);
+      this.spinnerService.hide();
       const { error } = err;
       this.messageService.add({severity:'error', summary:'Ha ocurrido un error', detail: error || 'Intenta nuevamente'});
     });

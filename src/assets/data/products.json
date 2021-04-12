@@ -1,0 +1,19 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"name": "Computer",
+			"image": "computer.jpeg"
+		},
+		{
+			"id": "1001",
+			"name": "Data Management",
+			"image": "data-management.jpeg"
+		},
+		{
+			"id": "1002",
+			"name": "Robot",
+			"image": "robot.jpeg"
+		}
+	]
+}

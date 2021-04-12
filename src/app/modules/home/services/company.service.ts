@@ -11,6 +11,10 @@ export class CompanyService {
   constructor(
     private httpClient: HttpClient
   ) { }
+  
+  getCompanies() {
+    return this.httpClient.get(environment.api + '/Organizaciones');
+  }
 
   register(company: Company) {
     return this.httpClient.post(environment.api + '/Organizaciones/register', company);
