@@ -19,7 +19,7 @@ export class RegisterFormComponent implements OnInit {
   public registerForm: FormGroup;
   public headings: Array<Heading> = new Array<Heading>();
   public countries: Array<Country> = new Array<Heading>();
-  private mediumRegex = new RegExp('^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$', 'g');
+  private mediumRegex = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})', 'g');
   @Output() hasBeenSaved = new EventEmitter<boolean>();
 
   constructor(
