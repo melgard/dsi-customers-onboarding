@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  api: 'https://api-tennant.ohmioerp.com'
+  api: 'https://api-tennant.ohmioerp.com',
+  passwordRegex: '^(?=.?[A-Z])(?=.?[a-z])(?=.*?[0-9]).{8,}$',
+  subdomainRegex: '^[A-Za-z0-9-]+$'
 };
 
 /*

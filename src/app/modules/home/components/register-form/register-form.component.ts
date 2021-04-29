@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MessageService } from 'primeng/api';
 import { Heading } from 'src/app/modules/home/interfaces/heading';
+import { environment } from 'src/environments/environment';
 import { Company } from '../../interfaces/company';
 import { Country } from '../../interfaces/country';
 import { CompanyService } from '../../services/company.service';
@@ -19,7 +20,8 @@ export class RegisterFormComponent implements OnInit {
   public registerForm: FormGroup;
   public headings: Array<Heading> = new Array<Heading>();
   public countries: Array<Country> = new Array<Heading>();
-  private mediumRegex = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})', 'g');
+  private passwordRegex = new RegExp(environment.passwordRegex, 'g');
+  private subDomainRegex = new RegExp(environment.subdomainRegex, 'g');
   @Output() hasBeenSaved = new EventEmitter<boolean>();
 
   constructor(
@@ -33,8 +35,8 @@ export class RegisterFormComponent implements OnInit {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       nombreCompleto: ['', Validators.required],
-      password: ['', [Validators.pattern(this.mediumRegex), Validators.required]],
-      identificador: ['', Validators.required],
+      password: ['', [Validators.pattern(this.passwordRegex), Validators.required]],
+      identificador: ['', [Validators.pattern(this.subDomainRegex), Validators.required]],
       razonSocial: ['', Validators.required],
       rubro: ['', Validators.required],
       pais: ['', Validators.required],

@@ -31,6 +31,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
+    console.log(this.loginForm);
     if(this.loginForm.invalid) return;
 
     this.spinnerService.show();
